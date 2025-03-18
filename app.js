@@ -14,6 +14,19 @@ function agregarAmigo(){   //Se declara la función para agregar amigos a la lis
     }
 }
 
+function sortearAmigo(){
+    if (listaamigos.length>0 ){
+        let indice=Math.floor(Math.random() * listaamigos.length);
+        let amigoescogido= listaamigos[indice];
+        document.getElementById('listaAmigos').textContent = 'El amigo secreto sorteado es: ' + amigoescogido;
+        listaAmigos.style.color = 'green';
+    }
+    else{
+        alert("Por favor, ingrese otro amigo");
+    }
+}
+
+
 function mostrarAmigos(){   //Se declara una fución para mostrar amigos en forma de lista los amigos que vayas agregando
     let lista=document.getElementById('listaAmigos');  //Variable llamada lista, para guardar la lista de amigos que vyas ingresando
     lista.innerHTML = '';     //Limpiar cualquier contenido existente dentro de la lista, para que este vacía al momento de agregar nuevos nombres
