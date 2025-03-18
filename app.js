@@ -13,3 +13,23 @@ function agregarAmigo(){   //Se declara la función para agregar amigos a la lis
         document.getElementById('amigo').value = '';  //se restablece el campo de ntrada para limpiar el formulario y poder ingresar un nuevo nombre
     }
 }
+
+function mostrarAmigos(){   //Se declara una fución para mostrar amigos en forma de lista los amigos que vayas agregando
+    let lista=document.getElementById('listaAmigos');  //Variable llamada lista, para guardar la lista de amigos que vyas ingresando
+    lista.innerHTML = '';     //Limpiar cualquier contenido existente dentro de la lista, para que este vacía al momento de agregar nuevos nombres
+    listaamigos.forEach((amigo, index) => {   //Bucle para iterar cada elemento en el arreglo listaamigos, nombre y posición actual
+        let li = document.createElement('li');  //Crea nuevo elemento de lista para almacenarlo en la variable li
+       
+        li.textContent = amigo;  //asigna valor actual
+        
+        li.setAttribute('aria-labelledby', `amigo-${index}`);
+        
+        li.setAttribute('role', 'listitem');
+        
+        li.id = `amigo-${index}`;
+        
+        lista.appendChild(li);
+      
+    });
+    
+}
